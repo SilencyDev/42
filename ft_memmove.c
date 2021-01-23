@@ -6,11 +6,10 @@
 /*   By: kmacquet <kmacquet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/21 10:11:16 by kmacquet          #+#    #+#             */
-/*   Updated: 2021/01/21 16:35:08 by kmacquet         ###   ########.fr       */
+/*   Updated: 2021/01/23 13:33:55 by kmacquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include "libft.h"
 
 void		*ft_memmove(void *dest, const void *src, size_t n)

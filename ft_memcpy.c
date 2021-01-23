@@ -6,11 +6,11 @@
 /*   By: kmacquet <kmacquet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/21 10:09:11 by kmacquet          #+#    #+#             */
-/*   Updated: 2021/01/21 11:26:01 by kmacquet         ###   ########.fr       */
+/*   Updated: 2021/01/23 13:33:45 by kmacquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 void		*ft_memcpy(void *dest, const void *src, size_t n)
 {
