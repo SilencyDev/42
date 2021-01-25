@@ -6,7 +6,7 @@
 /*   By: kmacquet <kmacquet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/23 15:14:00 by kmacquet          #+#    #+#             */
-/*   Updated: 2021/01/23 17:02:23 by kmacquet         ###   ########.fr       */
+/*   Updated: 2021/01/25 15:55:21 by kmacquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	i = 0;
 	start = 0;
+	if (!s1)
+		return (NULL);
 	end = ft_strlen(s1) - 1;
 	src = (char *)s1;
 	while (*src && ft_ischarset(src[end], (char *)set))

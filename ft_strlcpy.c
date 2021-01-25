@@ -6,7 +6,7 @@
 /*   By: kmacquet <kmacquet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/19 12:54:10 by kmacquet          #+#    #+#             */
-/*   Updated: 2021/01/23 13:34:31 by kmacquet         ###   ########.fr       */
+/*   Updated: 2021/01/25 11:05:41 by kmacquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ size_t		ft_strlcpy(char *dst, const char *src, size_t dstsize)
 
 	count = 0;
 	i = 0;
+	if (!src)
+		return (0);
 	while ((char)src[count])
 		count++;
 	if (dstsize == 0)

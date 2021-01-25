@@ -6,13 +6,16 @@
 /*   By: kmacquet <kmacquet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/18 14:33:34 by kmacquet          #+#    #+#             */
-/*   Updated: 2021/01/18 14:50:46 by kmacquet         ###   ########.fr       */
+/*   Updated: 2021/01/24 13:09:06 by kmacquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	ft_toupper(int c)
+int					ft_toupper(int c)
 {
-	if (c >= 'a' && c <= 'z')
-		return (c - 32);
-	return (c);
+	unsigned int	d;
+
+	d = (unsigned int)c;
+	if (d >= 'a' && d <= 'z')
+		return (d - 32);
+	return ((int)d);
 }

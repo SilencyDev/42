@@ -6,7 +6,7 @@
 /*   By: kmacquet <kmacquet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/23 12:42:31 by kmacquet          #+#    #+#             */
-/*   Updated: 2021/01/23 13:33:01 by kmacquet         ###   ########.fr       */
+/*   Updated: 2021/01/25 16:27:37 by kmacquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ void		*ft_calloc(size_t count, size_t size)
 	size_t	j;
 
 	j = count * size;
-	dest = malloc(j);
+	if (!(dest = malloc(j)))
+		return (NULL);
 	ft_bzero(dest, j);
 	return (dest);
 }

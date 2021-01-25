@@ -6,7 +6,7 @@
 /*   By: kmacquet <kmacquet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/23 14:29:32 by kmacquet          #+#    #+#             */
-/*   Updated: 2021/01/23 15:13:02 by kmacquet         ###   ########.fr       */
+/*   Updated: 2021/01/25 15:54:16 by kmacquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char		*ft_strjoin(char const *s1, char const *s2)
 	int		len;
 	char	*dest_init;
 
+	if (!s1 || !s2)
+		return (NULL);
 	len = ft_strlen(s1) + ft_strlen(s2);
 	if (!(dest = malloc(sizeof(char *) * len + 1)))
 		return (NULL);
