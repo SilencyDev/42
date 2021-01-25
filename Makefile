@@ -6,7 +6,7 @@
 #    By: kmacquet <kmacquet@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/21 10:28:39 by kmacquet          #+#    #+#              #
-#    Updated: 2021/01/25 15:31:39 by kmacquet         ###   ########.fr        #
+#    Updated: 2021/01/25 17:38:35 by kmacquet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ SRCS = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c \
 		ft_strnstr.c ft_atoi.c ft_calloc.c ft_strdup.c \
 		ft_substr.c ft_strjoin.c ft_strtrim.c ft_itoa.c \
 		ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c \
-		ft_putnbr_fd.c ft_strmapi.c
+		ft_putnbr_fd.c ft_strmapi.c ft_split.c
 OBJS = $(SRCS:.c=.o)
 BON = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
 		ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c \
