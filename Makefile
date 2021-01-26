@@ -6,7 +6,7 @@
 #    By: kmacquet <kmacquet@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/21 10:28:39 by kmacquet          #+#    #+#              #
-#    Updated: 2021/01/25 17:38:35 by kmacquet         ###   ########.fr        #
+#    Updated: 2021/01/26 17:01:42 by kmacquet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,6 +38,9 @@ all: $(NAME)
 $(NAME): $(OBJS)
 		$(ARRCS) $@ $(OBJS)
 
+bonus: $(BOBJS)
+		$(ARRCS) $(NAME) $(BOBJS)
+
 clean:
 		$(RM) $(OBJS)
 
@@ -45,6 +48,3 @@ fclean: clean
 		$(RM) $(NAME)
 
 re: fclean all
-
-bonus: $(OBJS) $(BOBJS)
-		$(ARRCS) $@ $(OBJS) $(BOBJS)

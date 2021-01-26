@@ -6,7 +6,7 @@
 /*   By: kmacquet <kmacquet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/19 12:12:46 by kmacquet          #+#    #+#             */
-/*   Updated: 2021/01/25 17:38:43 by kmacquet         ###   ########.fr       */
+/*   Updated: 2021/01/26 17:04:01 by kmacquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,12 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
+
+typedef struct		s_list
+{
+	void			*content;
+	struct s_list	*next;
+} 					t_list;
 
 int		ft_strlen(const char *s);
 int		ft_atoi(const char *str);
@@ -54,4 +60,13 @@ char	*ft_strmapi(const char *s, char (*f)(unsigned int, char));
 char	**ft_split(char const *s, char c);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
+t_list	*ft_lstnew(void *content);
+void	ft_lstadd_front(t_list **slst, t_list *new);
+int		ft_lstsize(t_list *lst);
+t_list	*ft_lstlast(t_list *lst);
+void	ft_lstadd_back(t_list **alst, t_list *new);
+void	ft_lstdelone(t_list *lst, void (*del)(void *));
+void	ft_lstclear(t_list **lst, void (*del)(void *));
+void	ft_lstiter(t_list *lst, void (*f)(void *));
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 #endif

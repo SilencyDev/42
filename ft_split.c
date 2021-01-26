@@ -6,24 +6,31 @@
 /*   By: kmacquet <kmacquet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/25 17:10:09 by kmacquet          #+#    #+#             */
-/*   Updated: 2021/01/25 17:44:52 by kmacquet         ###   ########.fr       */
+/*   Updated: 2021/01/26 12:19:38 by kmacquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_countword(char *str, char charset)
+int			is_charset(char c, char charset)
 {
-	int	i;
+	if (c == charset)
+		return (1);
+	return (0);
+}
+
+int			ft_countword(char *str, char charset)
+{
+	int		i;
 
 	i = 0;
 	while (*str)
 	{
-		while (*str == charset && *str)
+		while (is_charset(*str, charset) && *str)
 			str++;
-		if (*str != charset && *str)
+		if (!is_charset(*str, charset) && *str)
 		{
-			while (*str != charset && *str)
+			while (!is_charset(*str, charset) && *str)
 				str++;
 			i++;
 		}
@@ -31,17 +38,17 @@ int		ft_countword(char *str, char charset)
 	return (i);
 }
 
-void	ft_strcpy(char *start, char *s, char *dest)
+void		ft_strcpy(char *start, char *str, char *dest)
 {
 	int		j;
 
 	j = 0;
-	while (start < s)
+	while (start < str)
 		dest[j++] = *start++;
 	dest[j] = '\0';
 }
 
-char	**ft_split(char const *s, char c)
+char		**ft_split(char const *s, char c)
 {
 	char	**dest;
 	char	*start;
@@ -50,23 +57,22 @@ char	**ft_split(char const *s, char c)
 
 	i = 0;
 	str = (char *)s;
-	if (!(dest = malloc(ft_countword(str, c) + 1)))
+	if (!s)
+		return (NULL);
+	if (!(dest = malloc(sizeof(char *) * (ft_countword(str, c) + 1))))
 		return (NULL);
 	while (*str)
-	{
-		if (*str != c)
+		if (!is_charset(*str, c))
 		{
 			start = str;
-			while (*str && *str != c)
+			while (*str && !is_charset(*str, c))
 				str++;
-			if (!(dest[i] = malloc(str - start + 1)))
-				return (NULL);
+			dest[i] = malloc(str - start + 1);
 			ft_strcpy(start, str, dest[i]);
 			i++;
 		}
 		else
 			str++;
-	}
-	dest[i] = 0;
+	dest[i] = NULL;
 	return (dest);
 }

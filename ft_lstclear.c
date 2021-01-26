@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmacquet <kmacquet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/21 10:09:33 by kmacquet          #+#    #+#             */
-/*   Updated: 2021/01/26 12:23:01 by kmacquet         ###   ########.fr       */
+/*   Created: 2021/01/26 16:17:05 by kmacquet          #+#    #+#             */
+/*   Updated: 2021/01/26 17:04:21 by kmacquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+void		ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	char *ptr;
+	t_list	*tmp;
+	t_list	*list;
+	int		i;
 
-	ptr = (char *)s;
-	while (n--)
+	list = *lst;
+	i = ft_lstsize(list);
+	while (i--)
 	{
-		if (*ptr == c)
-			return (ptr);
-		ptr++;
+		tmp = list;
+		if (!list->next)
+			*lst = NULL;
+		del(list->content);
+		free(list);
+		list = tmp->next;
 	}
-	return (NULL);
 }
